@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Лабораторная работа номер 1 - страница "О себе" -->
+<!-- Космический энтузиаст и астроном-любитель -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>О себе</title>
+
+<!-- Здесь все стили для страницы -->
+<style>
+/* Настройки для всей страницы: шрифт, отступы, цвета */
+body {
+font-family: Arial;
+margin: 20px;
+background-color: #0a0e27;
+color: #e6ecff;
+}
+
+/* Стили для шапки сайта */
+header {
+background-color: #121a3a;
+color: #ffd166;
+padding: 15px;
+border: 1px solid #1c2a52;
+}
+
+/* Стили для блоков с текстом (Навыки, Проекты, Связь) */
+section {
+background-color: #121a3a;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #1c2a52;
+}
+
+/* Стили для нижней части сайта */
+footer {
+background-color: #121a3a;
+color: #ffd166;
+padding: 10px;
+text-align: center;
+border: 1px solid #1c2a52;
+}
+
+/* Рамка вокруг фото */
+img {
+border: 2px solid #ffd166;
+}
+
+/* Поля формы: каждое с новой строки и одинаковой ширины */
+input, textarea {
+display: block;
+width: 90%;
+margin: 5px 0;
+padding: 5px;
+background-color: #0a0e27;
+color: #e6ecff;
+border: 1px solid #1c2a52;
+}
+
+/* Кнопка отправки формы */
+button {
+background-color: #ffd166;
+color: #0a0e27;
+border: none;
+padding: 8px 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+/* Ссылки */
+a {
+color: #ffd166;
+}
+</style>
+</head>
+<body>
+
+<!-- Шапка с именем/фамилией и заголовком страницы -->
+<header>
+<h1>Каролина Капитонова</h1>
+<p>Космический энтузиаст и астроном-любитель</p>
+</header>
+
+<!-- Основной контент -->
+<main>
+
+<!-- Боковая панель с краткой информацией -->
+<aside style="float:right; width:200px; padding:10px; background-color:#1c2a52; color:#e6ecff; border:1px solid #ffd166;">
+<h3>Любимое созвездие</h3>
+<p>Орион — одно из самых узнаваемых созвездий ночного неба. В нём находится туманность M42, видимая даже невооружённым глазом.</p>
+</aside>
+
+<!-- Изображение.
+src - ссылка на картинку
+alt - текст, если картинка не откроется
+width и height - ширина и высота картинки -->
+<img src="myphoto.jpg" alt="Моё изображение" width="407" height="250">
+
+<!-- Секция "Навыки" - маркированный список -->
+<section>
+<h2>Навыки</h2>
+<ul>
+<li>Работа с телескопом-рефлектором</li>
+<li>Анализ астрономических данных (Python, Astropy)</li>
+<li>3D-моделирование космических объектов (Blender)</li>
+<li>Спектральный анализ и фотометрия звёзд</li>
+</ul>
+</section>
+
+<!-- Секция "Проекты" - нумерованный список из 4 пунктов -->
+<section>
+<h2>Проекты, которые меня вдохновляют</h2>
+<ol>
+<li>Миссия «Кассини» — 13 лет изучения Сатурна</li>
+<li>Телескоп «Джеймс Уэбб» — снимки ранней Вселенной</li>
+<li>Марсоход «Perseverance» — поиск жизни на Марсе</li>
+<li>Миссия «New Horizons» — первый пролёт мимо Плутона</li>
+</ol>
+</section>
+
+<!-- Этот блок нужен, чтобы боковая панель выше не мешала следующему тексту -->
+<div style="clear:both;"></div>
+
+<!-- Форма обратной связи: Имя, Email, Сообщение, кнопка отправки -->
+<section>
+<h2>Связь</h2>
+<form>
+<label>Имя</label>
+<input type="text" name="name" placeholder="Введите ваше имя">
+
+<label>Email</label>
+<input type="email" name="email" placeholder="example@mail.com">
+
+<label>Сообщение</label>
+<textarea name="message" placeholder="Напишите ваше сообщение..."></textarea>
+
+<button type="submit">Отправить</button>
+</form>
+</section>
+
+</main>
+
+<!-- Нижняя часть страницы с копирайтом и годом -->
+<footer>
+<p>&copy; 2026 Каролина Капитонова</p>
+</footer>
+
+</body>
+</html>
