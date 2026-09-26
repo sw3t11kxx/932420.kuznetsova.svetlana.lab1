@@ -5,89 +5,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>О себе — Кузнецова Светлана</title>
 
+	<!-- Внешний CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Внутренний блок <style>: 1 правило для аватара -->
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 20px;
-			background-color: #0a0e27;
-			color: #e6ecff;
-		}
-
-		header {
-			background-color: #121a3a;
-			color: #ffd166;
-			padding: 15px;
-			border: 1px solid #1c2a52;
-		}
-
-		main {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 15px;
-			align-items: flex-start;
-		}
-
-		.content {
-			flex: 1 1 500px;
-			min-width: 0;
-		}
-
-		aside {
-			flex: 0 0 220px;
-			order: 2;
-			padding: 10px;
-			background-color: #1c2a52;
-			color: #e6ecff;
-			border: 1px solid #ffd166;
-		}
-
-		section {
-			background-color: #121a3a;
-			padding: 10px;
-			margin-bottom: 15px;
-			border: 1px solid #1c2a52;
-		}
-
-		footer {
-			background-color: #121a3a;
-			color: #ffd166;
-			padding: 10px;
-			text-align: center;
-			border: 1px solid #1c2a52;
-		}
-
-		img {
-			max-width: 100%;
-			height: auto;
-			border: 2px solid #ffd166;
-		}
-
-		input,
-		textarea {
-			display: block;
-			width: 90%;
-			margin: 5px 0;
-			padding: 5px;
-			background-color: #0a0e27;
-			color: #e6ecff;
-			border: 1px solid #1c2a52;
-		}
-
-		button {
-			background-color: #ffd166;
-			color: #0a0e27;
-			border: none;
-			padding: 8px 16px;
-			font-weight: bold;
-			cursor: pointer;
-		}
-
-		a {
-			color: #ffd166;
+		.avatar {
+			border: 3px solid var(--color-accent);
+			box-shadow: 0 0 25px rgba(255, 209, 102, 0.7);
+			border-radius: 6px;
 		}
 	</style>
 </head>
 <body>
+
+	<!-- Звёздное небо: два слоя-псевдоэлемента создаются через CSS -->
+	<div class="stars"></div>
+
+	<!-- Inline-стиль: position: relative для контейнера со звёздами -->
+	<div class="star-field" style="position: relative;">
+		<div class="star star-1"></div>
+		<div class="star star-2"></div>
+		<div class="star star-3"></div>
+		<div class="star star-4"></div>
+		<div class="star star-5"></div>
+		<div class="star star-6"></div>
+		<div class="star star-7"></div>
+		<div class="star star-8"></div>
+	</div>
 
 	<header>
 		<h1>Кузнецова Светлана</h1>
@@ -96,12 +41,16 @@
 
 	<main>
 		<div class="content">
-			<img src="images/myphoto.jpg"
-				alt="Портрет Кузнецовой Светланы"
-				width="407"
-				height="250">
+			<div class="photo-wrapper">
+				<img class="avatar"
+					src="images/myphoto.jpg"
+					alt="Портрет Кузнецовой Светланы"
+					width="407"
+					height="250">
+				<span class="badge">Наблюдатель</span>
+			</div>
 
-			<section>
+			<section id="skills">
 				<h2>Навыки</h2>
 				<ul>
 					<li>Работа с телескопом-рефлектором</li>
@@ -111,7 +60,8 @@
 				</ul>
 			</section>
 
-			<section>
+			<!-- :hover на секции «Проекты» раздвигает звёзды (opacity фона) -->
+			<section id="projects">
 				<h2>Проекты, которые меня вдохновляют</h2>
 				<ol>
 					<li>Миссия «Кассини» — 13 лет изучения Сатурна</li>
@@ -121,7 +71,7 @@
 				</ol>
 			</section>
 
-			<section>
+			<section id="contact">
 				<h2>Связь</h2>
 				<form action="#" method="post">
 					<label for="name">Имя</label>
@@ -153,6 +103,7 @@
 		<aside>
 			<h3>Любимое созвездие</h3>
 			<p>Орион — одно из самых узнаваемых созвездий ночного неба. В нём находится туманность M42, видимая даже невооружённым глазом.</p>
+			<p><a href="https://ru.wikipedia.org/wiki/Орион_(созвездие)" target="_blank" rel="noopener">Подробнее об Орионе</a></p>
 		</aside>
 	</main>
 

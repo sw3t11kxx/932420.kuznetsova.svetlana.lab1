@@ -1,0 +1,282 @@
+/* ===== CSS-переменные ===== */
+:root {
+	--color-bg: #0a0e27;          /* основной тёмно-синий */
+	--color-panel: #121a3a;       /* панели */
+	--color-accent: #ffd166;      /* золотой акцент */
+	--color-accent-dark: #e0a800;
+	--color-text: #e6ecff;        /* светлый текст */
+	--color-border: #1c2a52;
+
+	--font-main: Arial, sans-serif;
+	--font-heading: "Trebuchet MS", Arial, sans-serif;
+
+	--radius: 4px;
+	--transition: 0.3s ease;
+}
+
+/* ===== Базовые стили ===== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-main);
+	margin: 20px;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	position: relative;           /* для absolute-звёзд */
+	min-height: 100vh;
+	overflow-x: hidden;
+	line-height: 1.5;
+}
+
+h1, h2, h3 {
+	font-family: var(--font-heading);
+	color: var(--color-accent);
+}
+
+/* ===== Позиционирование ===== */
+
+/* relative + absolute: header — relative, бейдж внутри — absolute */
+header {
+	position: relative;
+	background-color: var(--color-panel);
+	color: var(--color-accent);
+	padding: 15px;
+	border: 1px solid var(--color-border);
+	z-index: 2;
+}
+
+header h1 {
+	margin: 0 0 5px;
+}
+
+/* static — обычный поток, задан явно для наглядности */
+header p {
+	position: static;
+	margin: 0;
+	color: var(--color-text);
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	align-items: flex-start;
+	margin-top: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+.content {
+	flex: 1 1 500px;
+	min-width: 0;
+}
+
+aside {
+	flex: 0 0 220px;
+	order: 2;
+	padding: 10px;
+	background-color: var(--color-panel);
+	color: var(--color-text);
+	border: 1px solid var(--color-accent);
+	position: relative;           /* ориентир для absolute, если нужно */
+}
+
+section {
+	background-color: var(--color-panel);
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid var(--color-border);
+	position: relative;
+	z-index: 2;
+	transition: background-color var(--transition), opacity var(--transition);
+}
+
+footer {
+	background-color: var(--color-panel);
+	color: var(--color-accent);
+	padding: 10px;
+	text-align: center;
+	border: 1px solid var(--color-border);
+	margin-top: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+/* ===== Аватар: контейнер relative, бейдж absolute ===== */
+.photo-wrapper {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.avatar {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.badge {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 4px 8px;
+	border-radius: var(--radius);
+}
+
+/* ===== Форма ===== */
+input,
+textarea {
+	display: block;
+	width: 90%;
+	margin: 5px 0 10px;
+	padding: 6px;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	border-color: var(--color-accent);
+	box-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
+}
+
+button {
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+	border: none;
+	padding: 8px 16px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: var(--radius);
+	transition: transform var(--transition), background-color var(--transition);
+}
+
+button:hover {
+	background-color: var(--color-accent-dark);
+	transform: translateY(-2px);
+}
+
+/* :active — эффект «вспышки» */
+button:active {
+	transform: scale(0.95);
+	box-shadow: 0 0 20px 6px var(--color-accent),
+	            0 0 40px 12px rgba(255, 209, 102, 0.5);
+	background-color: #fff3c4;
+}
+
+/* ===== Ссылки ===== */
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	transition: color var(--transition);
+}
+
+a:hover {
+	color: #fff3c4;
+	text-decoration: underline;
+}
+
+a:active {
+	color: var(--color-accent-dark);
+}
+
+a:visited {
+	color: #c9a227;
+}
+
+/* ===== Звёздное небо: псевдоэлементы ===== */
+.stars {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.stars::before,
+.stars::after {
+	content: "";
+	position: absolute;
+	inset: -50%;
+	background-repeat: repeat;
+	background-image:
+		radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+		radial-gradient(1px 1px at 120px 80px, #ffd166, transparent),
+		radial-gradient(1.5px 1.5px at 220px 150px, #ffffff, transparent),
+		radial-gradient(1px 1px at 320px 60px, #cfe1ff, transparent),
+		radial-gradient(2px 2px at 420px 200px, #ffd166, transparent),
+		radial-gradient(1px 1px at 520px 120px, #ffffff, transparent);
+	background-size: 600px 300px;
+	opacity: 0.8;
+	animation: twinkle 6s infinite ease-in-out alternate;
+}
+
+.stars::after {
+	background-size: 400px 400px;
+	opacity: 0.5;
+	animation-duration: 9s;
+	animation-delay: -3s;
+}
+
+@keyframes twinkle {
+	0%   { opacity: 0.25; }
+	50%  { opacity: 0.9; }
+	100% { opacity: 0.35; }
+}
+
+/* ===== Мелкие div-звёзды с мерцанием ===== */
+.star-field {
+	position: absolute;           /* перекрывается inline-стилем relative */
+	inset: 0;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.star {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+	animation: twinkle 3s infinite ease-in-out;
+}
+
+.star-1 { top: 8%;  left: 12%; animation-delay: 0s;   }
+.star-2 { top: 20%; left: 75%; animation-delay: 0.4s; background-color: var(--color-accent); }
+.star-3 { top: 35%; left: 40%; animation-delay: 0.8s; }
+.star-4 { top: 55%; left: 85%; animation-delay: 1.2s; background-color: var(--color-accent); }
+.star-5 { top: 70%; left: 20%; animation-delay: 1.6s; }
+.star-6 { top: 80%; left: 60%; animation-delay: 2.0s; background-color: var(--color-accent); }
+.star-7 { top: 45%; left: 5%;  animation-delay: 2.4s; }
+.star-8 { top: 15%; left: 50%; animation-delay: 2.8s; }
+
+/* ===== :hover на секции «Проекты» — «раздвигаем» звёзды ===== */
+#projects:hover ~ .star-field .star,
+#projects:hover .star {
+	opacity: 0.15;
+	transform: scale(1.8);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#projects:hover {
+	background-color: rgba(28, 42, 82, 0.6);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 700px) {
+	aside {
+		flex: 1 1 100%;
+		order: 0;
+	}
+}
