@@ -1,149 +1,164 @@
 <!DOCTYPE html>
-<!-- Лабораторная работа номер 1 - страница "О себе" -->
-<!-- Космический энтузиаст и астроном-любитель -->
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>О себе</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>О себе — Кузнецова Светлана</title>
 
-<!-- Здесь все стили для страницы -->
-<style>
-/* Настройки для всей страницы: шрифт, отступы, цвета */
-body {
-font-family: Arial;
-margin: 20px;
-background-color: #0a0e27;
-color: #e6ecff;
-}
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #0a0e27;
+			color: #e6ecff;
+		}
 
-/* Стили для шапки сайта */
-header {
-background-color: #121a3a;
-color: #ffd166;
-padding: 15px;
-border: 1px solid #1c2a52;
-}
+		header {
+			background-color: #121a3a;
+			color: #ffd166;
+			padding: 15px;
+			border: 1px solid #1c2a52;
+		}
 
-/* Стили для блоков с текстом (Навыки, Проекты, Связь) */
-section {
-background-color: #121a3a;
-padding: 10px;
-margin-bottom: 15px;
-border: 1px solid #1c2a52;
-}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			align-items: flex-start;
+		}
 
-/* Стили для нижней части сайта */
-footer {
-background-color: #121a3a;
-color: #ffd166;
-padding: 10px;
-text-align: center;
-border: 1px solid #1c2a52;
-}
+		.content {
+			flex: 1 1 500px;
+			min-width: 0;
+		}
 
-/* Рамка вокруг фото */
-img {
-border: 2px solid #ffd166;
-}
+		aside {
+			flex: 0 0 220px;
+			order: 2;
+			padding: 10px;
+			background-color: #1c2a52;
+			color: #e6ecff;
+			border: 1px solid #ffd166;
+		}
 
-/* Поля формы: каждое с новой строки и одинаковой ширины */
-input, textarea {
-display: block;
-width: 90%;
-margin: 5px 0;
-padding: 5px;
-background-color: #0a0e27;
-color: #e6ecff;
-border: 1px solid #1c2a52;
-}
+		section {
+			background-color: #121a3a;
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #1c2a52;
+		}
 
-/* Кнопка отправки формы */
-button {
-background-color: #ffd166;
-color: #0a0e27;
-border: none;
-padding: 8px 16px;
-font-weight: bold;
-cursor: pointer;
-}
+		footer {
+			background-color: #121a3a;
+			color: #ffd166;
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #1c2a52;
+		}
 
-/* Ссылки */
-a {
-color: #ffd166;
-}
-</style>
+		img {
+			max-width: 100%;
+			height: auto;
+			border: 2px solid #ffd166;
+		}
+
+		input,
+		textarea {
+			display: block;
+			width: 90%;
+			margin: 5px 0;
+			padding: 5px;
+			background-color: #0a0e27;
+			color: #e6ecff;
+			border: 1px solid #1c2a52;
+		}
+
+		button {
+			background-color: #ffd166;
+			color: #0a0e27;
+			border: none;
+			padding: 8px 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		a {
+			color: #ffd166;
+		}
+	</style>
 </head>
 <body>
 
-<!-- Шапка с именем/фамилией и заголовком страницы -->
-<header>
-<h1>Каролина Капитонова</h1>
-<p>Космический энтузиаст и астроном-любитель</p>
-</header>
+	<header>
+		<h1>Кузнецова Светлана</h1>
+		<p>Космический энтузиаст и астроном-любитель</p>
+	</header>
 
-<!-- Основной контент -->
-<main>
+	<main>
+		<div class="content">
+			<img src="images/myphoto.jpg"
+				alt="Портрет Кузнецовой Светланы"
+				width="407"
+				height="250">
 
-<!-- Боковая панель с краткой информацией -->
-<aside style="float:right; width:200px; padding:10px; background-color:#1c2a52; color:#e6ecff; border:1px solid #ffd166;">
-<h3>Любимое созвездие</h3>
-<p>Орион — одно из самых узнаваемых созвездий ночного неба. В нём находится туманность M42, видимая даже невооружённым глазом.</p>
-</aside>
+			<section>
+				<h2>Навыки</h2>
+				<ul>
+					<li>Работа с телескопом-рефлектором</li>
+					<li>Анализ астрономических данных (Python, Astropy)</li>
+					<li>3D-моделирование космических объектов (Blender)</li>
+					<li>Спектральный анализ и фотометрия звёзд</li>
+				</ul>
+			</section>
 
-<!-- Изображение.
-src - ссылка на картинку
-alt - текст, если картинка не откроется
-width и height - ширина и высота картинки -->
-<img src="myphoto.jpg" alt="Моё изображение" width="407" height="250">
+			<section>
+				<h2>Проекты, которые меня вдохновляют</h2>
+				<ol>
+					<li>Миссия «Кассини» — 13 лет изучения Сатурна</li>
+					<li>Телескоп «Джеймс Уэбб» — снимки ранней Вселенной</li>
+					<li>Марсоход «Perseverance» — поиск жизни на Марсе</li>
+					<li>Миссия «New Horizons» — первый пролёт мимо Плутона</li>
+				</ol>
+			</section>
 
-<!-- Секция "Навыки" - маркированный список -->
-<section>
-<h2>Навыки</h2>
-<ul>
-<li>Работа с телескопом-рефлектором</li>
-<li>Анализ астрономических данных (Python, Astropy)</li>
-<li>3D-моделирование космических объектов (Blender)</li>
-<li>Спектральный анализ и фотометрия звёзд</li>
-</ul>
-</section>
+			<section>
+				<h2>Связь</h2>
+				<form action="#" method="post">
+					<label for="name">Имя</label>
+					<input type="text"
+						id="name"
+						name="name"
+						placeholder="Введите ваше имя"
+						required>
 
-<!-- Секция "Проекты" - нумерованный список из 4 пунктов -->
-<section>
-<h2>Проекты, которые меня вдохновляют</h2>
-<ol>
-<li>Миссия «Кассини» — 13 лет изучения Сатурна</li>
-<li>Телескоп «Джеймс Уэбб» — снимки ранней Вселенной</li>
-<li>Марсоход «Perseverance» — поиск жизни на Марсе</li>
-<li>Миссия «New Horizons» — первый пролёт мимо Плутона</li>
-</ol>
-</section>
+					<label for="email">Email</label>
+					<input type="email"
+						id="email"
+						name="email"
+						placeholder="example@mail.com"
+						required>
 
-<!-- Этот блок нужен, чтобы боковая панель выше не мешала следующему тексту -->
-<div style="clear:both;"></div>
+					<label for="message">Сообщение</label>
+					<textarea id="message"
+						name="message"
+						rows="5"
+						placeholder="Напишите ваше сообщение..."
+						required></textarea>
 
-<!-- Форма обратной связи: Имя, Email, Сообщение, кнопка отправки -->
-<section>
-<h2>Связь</h2>
-<form>
-<label>Имя</label>
-<input type="text" name="name" placeholder="Введите ваше имя">
+					<button type="submit">Отправить</button>
+				</form>
+			</section>
+		</div>
 
-<label>Email</label>
-<input type="email" name="email" placeholder="example@mail.com">
+		<aside>
+			<h3>Любимое созвездие</h3>
+			<p>Орион — одно из самых узнаваемых созвездий ночного неба. В нём находится туманность M42, видимая даже невооружённым глазом.</p>
+		</aside>
+	</main>
 
-<label>Сообщение</label>
-<textarea name="message" placeholder="Напишите ваше сообщение..."></textarea>
-
-<button type="submit">Отправить</button>
-</form>
-</section>
-
-</main>
-
-<!-- Нижняя часть страницы с копирайтом и годом -->
-<footer>
-<p>&copy; 2026 Каролина Капитонова</p>
-</footer>
+	<footer>
+		<p>&copy; 2026 Кузнецова Светлана</p>
+	</footer>
 
 </body>
 </html>
